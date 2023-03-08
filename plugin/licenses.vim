@@ -78,6 +78,11 @@ let s:filetypeCommentDelimiters = {
     \'awk': {
         \'singlelineStart': '# '
     \},
+    \'c': {
+        \'end': '*/',
+        \'middle': ' * ',
+        \'start': '/*-'
+    \},
     \'cmake': {
         \'singlelineStart': '# '
     \},
@@ -344,7 +349,7 @@ function! s:substituteAuthorName(firstLine, lastLine)
     let currentLine = line('.')
     if currentLine >= a:firstLine && currentLine <= a:lastLine
         if len(g:licenses_authors_name) > 0
-            silent! substitute /<name of author>/\='Author: ' . g:licenses_authors_name/
+            silent! substitute /<name of author>/\=g:licenses_authors_name/
         else
             if getline('.') =~ "<name of author>"
                 normal! dd
