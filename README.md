@@ -32,7 +32,7 @@ the copyright holder's name will be automatically added to the license.
 Thus, you may want to add such a line to you .vimrc:
 
 ```vim
-let g:licenses_copyright_holders_name = 'Last Name, First Name <my@email.com>'
+let g:licenses_copyright_holders_name = 'First Name Last Name <(login)@FreeBSD.org>'
 ```
 
 And the `<name of author>` tag will be automatically replaced by the the
@@ -41,16 +41,16 @@ your name will be automatically added to the license.
 Thus, you may want to add such a line to you .vimrc:
 
 ```vim
-let g:licenses_authors_name = 'Last Name, First Name <my@email.com>'
+let g:licenses_authors_name = 'First Name Last Name <(login)@FreeBSD.org>'
 ```
 
 If you do not want this plugin to create all these commands, you may
 restrict to the licenses you want by using the `g:licenses_default_commands`
-option. For instance, to have this plugin add only a command for the GNU GPL,
-Mit and Foobar licenses, use this:
+option. For instance, to have this plugin add only a command for the
+BSD 2-Clause, BSD 3-Clause, ISC, MIT and Foobar licenses, use this:
 
 ```vim
-let g:licenses_default_commands = ['gpl', 'mit', 'foobar']
+let g:licenses_default_commands = ['bsd2', 'bsd3', 'isc', 'mit', 'foobar']
 ```
 
 Commands
@@ -137,7 +137,7 @@ Settings
 The name of author to automatically insert in the buffer in the licence.
 
 ```vim
-let g:licenses_authors_name = 'Last Name, First Name <my@email.com>'
+let g:licenses_authors_name = 'First Name Last Name <(login)@FreeBSD.org>'
 ```
 
 ### `g:licenses_default_commands`
@@ -145,7 +145,8 @@ let g:licenses_authors_name = 'Last Name, First Name <my@email.com>'
 Choose what commands to create for the listed licenses
 
 ```vim
-let g:licenses_default_commands = ['gpl', 'mit', 'foobar']
+let g:licenses_default_commands = ['bsd2', 'bsd3', 'isc', 'mit', 'foobar']
 ```
 
-By default, only `:Gpl` and `:Mit` commands are available. `:Foobar` is also created for `licenses/foobar.txt`.
+By default, only `:Bsd2`, `:Bsd3`, `:Isc`, and `:Mit` commands are available.
+`:Foobar` is also created for `licenses/foobar.txt`.
